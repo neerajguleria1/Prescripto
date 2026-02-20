@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import "tailwindcss";
+
+* {
+  font-family: Outfit;
+}
+
+.active hr {
+  @apply block
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #5f6FFF;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4a5acc;
+}
+
+@media (max-width:740px) {
+  .active p {
+    @apply text-white bg-[#5f6FFF]
+  }
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Smooth page transitions */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Card hover effects */
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(95, 111, 255, 0.2);
+}
+
+/* Button animations */
+.btn-primary {
+  @apply bg-[#5f6FFF] text-white px-8 py-3 rounded-full font-medium;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn-primary:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(95, 111, 255, 0.4);
+}
+
+/* Gradient backgrounds */
+.gradient-bg {
+  background: linear-gradient(135deg, #5f6FFF 0%, #7a88ff 100%);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #5f6FFF 0%, #7a88ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.btn-spinner .spinner {
+  width: 100px;
+  height: 100px;
+  place-self: center;
+  border: 5px solid #bdbdbd;
+  border-top-color: #5f6FFF;
+  border-radius: 50%;
+  animation: rotate 1.5s infinite;
+}
+
+.btn-spinner2 .spinner {
+  width: 100px;
+  height: 100px;
+  border: 5px solid #bdbdbd;
+  border-top-color: #5f6FFF;
+  border-radius: 50%;
+  animation: rotate 1.5s infinite;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow:
+      0 0 16px #5f6FFF,
+      0 0 32px #5f6FFF,
+      0 0 64px #5f6FFF,
+      0 0 96px #5f6FFF;
+  }
+
+  50% {
+    box-shadow:
+      0 0 24px #7a88ff,
+      0 0 48px #7a88ff,
+      0 0 96px #7a88ff,
+      0 0 128px #7a88ff;
+  }
+
+  100% {
+    box-shadow:
+      0 0 16px #5f6FFF,
+      0 0 32px #5f6FFF,
+      0 0 64px #5f6FFF,
+      0 0 96px #5f6FFF;
+  }
+}
+
+#top-loading-bar {
+  border-radius: 8px;
+  animation: pulseGlow 1.8s infinite ease-in-out;
+}
+
+/* Toast Styles */
+.custom-toast {
+  padding: 10px !important;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  border-radius: 12px !important;
+}
+
+.Toastify__toast--success {
+  background: linear-gradient(135deg, #5f6FFF 0%, #7a88ff 100%) !important;
+  color: white !important;
+  font-weight: 500;
+  box-shadow: 0 8px 24px rgba(95, 111, 255, 0.4);
+}
+
+.Toastify__toast--warning {
+  background: linear-gradient(135deg, #ff4d4f 0%, #ff7875 100%) !important;
+  color: white !important;
+  font-weight: 500;
+  box-shadow: 0 8px 24px rgba(255, 77, 79, 0.4);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+}
+
+.fadeIn {
+  animation: fadeIn 0.4s ease-in-out forwards;
+}
+
+.fadeOut {
+  animation: fadeOut 0.3s ease-in-out forwards;
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.float-animation {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Shimmer effect */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+}
+
+@media (max-width: 768px) {
+  .custom-toast {
+    width: 90% !important;
+    margin: 0 auto !important;
+    font-size: 14px;
+    border-radius: 10px !important;
+  }
+
+  .Toastify__toast-container {
+    width: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+  }
+}
