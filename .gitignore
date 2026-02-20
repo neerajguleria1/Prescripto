@@ -38,6 +38,9 @@ build/
 .env.docker.local
 backups/
 
+# CI/CD (temporary - add workflow scope to token later)
+.github/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
